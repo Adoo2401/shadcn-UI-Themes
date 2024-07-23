@@ -2,32 +2,412 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+
+/* This layer is for commponents other than charts */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+
+  .theme-orange {
+    --primary: 24.6 95% 53.1%;
+    --primary-foreground: 60 9.1% 97.8%;
+    --secondary: 60 4.8% 95.9%;
+    --secondary-foreground: 24 9.8% 10%;
+    --ring: 24.6 95% 53.1%;
+  }
+
+  .theme-rose {
+    --primary: 346.8 77.2% 49.8%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --ring: 346.8 77.2% 49.8%;
+  }
+
+  .theme-blue {
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --ring: 221.2 83.2% 53.3%;
+  }
+
+  .theme-green {
+    --primary: 142.1 76.2% 36.3%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --ring: 142.1 76.2% 36.3%;
+  }
+
+  .theme-purpleish {
+     /* Name: custom color palette
+       Author: Ilias Ism
+       URL: https://gradient.page */
+
+    /* CSS: .bg-gradient { background: var(--gradient) } */
+    --gradient: linear-gradient(to top left,#cc208e,#6713d2);
+
+    --background: -41 47.449999999999996% 3.68%;
+    --foreground: -41 7.3% 97.3%;
+
+    --muted: -41 36.5% 17.48%;
+    --muted-foreground: -41 7.3% 54.6%;
+
+    --popover: -41 50.4% 5.98%;
+    --popover-foreground: -41 7.3% 97.3%;
+
+    --card: -41 50.4% 5.98%;
+    --card-foreground: -41 7.3% 97.3%;
+
+    --border: -41 36.5% 17.48%;
+    --input: -41 36.5% 17.48%;
+
+    --primary: -41 73% 46%;
+    --primary-foreground: -41 7.3% 4.6000000000000005%;
+
+    --secondary: -41 36.5% 17.48%;
+    --secondary-foreground: -41 7.3% 97.3%;
+
+    --accent: -41 36.5% 17.48%;
+    --accent-foreground: -41 7.3% 97.3%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: -41 7.3% 97.3%;
+    
+    --ring: -41 73% 46%;
+  }
+
+  .theme-purpleish * {
+    border-color: hsl(var(--border)) !important;
+  }
+
+  .theme-purpleish input,
+  .theme-purpleish select,
+  .theme-purpleish textarea {
+    border-color: hsl(var(--border)) !important;
+  }
+
+  .theme-purpleish button {
+    border-color: hsl(var(--border)) !important;
+  }
+
+  .theme-cyanish{
+    /* Name: custom color palette
+       Author: Ilias Ism
+       URL: https://gradient.page */
+
+    /* CSS: .bg-gradient { background: var(--gradient) } */
+    --gradient: linear-gradient(to top left,#4CB8C4,#3CD3AD);
+
+    --background: 198 33.15% 4.24%;
+    --foreground: 198 5.1% 97.65%;
+
+    --muted: 198 25.5% 15.9%;
+    --muted-foreground: 198 5.1% 55.3%;
+
+    --popover: 198 54.8% 6.890000000000001%;
+    --popover-foreground: 198 5.1% 97.65%;
+
+    --card: 198 54.8% 6.890000000000001%;
+    --card-foreground: 198 5.1% 97.65%;
+
+    --border: 198 25.5% 15.9%;
+    --input: 198 25.5% 15.9%;
+
+    --primary: 198 51% 53%;
+    --primary-foreground: 198 5.1% 5.300000000000001%;
+
+    --secondary: 198 25.5% 15.9%;
+    --secondary-foreground: 198 5.1% 97.65%;
+
+    --accent: 198 25.5% 15.9%;
+    --accent-foreground: 198 5.1% 97.65%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 198 5.1% 97.65%;
+
+    --ring: 198 51% 53%;
+  }
+
+  .theme-cyanish * {
+    border-color: hsl(var(--border)) !important;
+  }
+
+  .theme-cyanish input,
+  .theme-cyanish select,
+  .theme-cyanish textarea {
+    border-color: hsl(var(--border)) !important;
+  }
+
+  .theme-cyanish button {
+    border-color: hsl(var(--border)) !important;
+  }
+
+  .theme-yellowish {
+    /* Name: custom color palette
+       Author: Ilias Ism
+       URL: https://gradient.page */
+
+    /* CSS: .bg-gradient { background: var(--gradient) } */
+    --gradient: linear-gradient(to top left,#ffe259,#ffa751);
+
+    --background: 53 65% 5.36%;
+    --foreground: 53 10% 98.35%;
+
+    --muted: 53 50% 20.1%;
+    --muted-foreground: 53 10% 56.7%;
+
+    --popover: 53 45% 8.71%;
+    --popover-foreground: 53 10% 98.35%;
+
+    --card: 53 45% 8.71%;
+    --card-foreground: 53 10% 98.35%;
+
+    --border: 53 50% 20.1%;
+    --input: 53 50% 20.1%;
+
+    --primary: 53 100% 67%;
+    --primary-foreground: 53 10% 6.7%;
+
+    --secondary: 53 50% 20.1%;
+    --secondary-foreground: 53 10% 98.35%;
+
+    --accent: 53 50% 20.1%;
+    --accent-foreground: 53 10% 98.35%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 53 10% 98.35%;
+
+    --ring: 53 100% 67%;
+  }
+
+  .theme-yellowish * {
+    border-color: hsl(var(--border)) !important;
+  }
+  .theme-yellowish input,
+  .theme-yellowish select,
+  .theme-yellowish textarea {
+    border-color: hsl(var(--border)) !important;
+  }
+
+  .theme-yellowish button {
+    border-color: hsl(var(--border)) !important;
+  }
+
+  .theme-maronish {
+    /* Name: custom color palette
+       Author: Ilias Ism
+       URL: https://gradient.page */
+
+    /* CSS: .bg-gradient { background: var(--gradient) } */
+    --gradient: linear-gradient(to top left,#870000,#190A05);
+
+    --background: 0 65% 2.16%;
+    --foreground: 0 10% 96.35%;
+
+    --muted: 0 50% 8.100000000000001%;
+    --muted-foreground: 0 10% 52.7%;
+
+    --popover: 0 45% 3.5100000000000002%;
+    --popover-foreground: 0 10% 96.35%;
+
+    --card: 0 45% 3.5100000000000002%;
+    --card-foreground: 0 10% 96.35%;
+
+    --border: 0 50% 8.100000000000001%;
+    --input: 0 50% 8.100000000000001%;
+
+    --primary: 0 100% 27%;
+    --primary-foreground: 0 10% 96.35%;
+
+    --secondary: 0 50% 8.100000000000001%;
+    --secondary-foreground: 0 10% 96.35%;
+
+    --accent: 0 50% 8.100000000000001%;
+    --accent-foreground: 0 10% 96.35%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 10% 96.35%;
+
+    --ring: 0 100% 27%;
+  }
+
+  .theme-maronish * {
+    border-color: hsl(var(--border)) !important;
+  }
+
+  .theme-maronish input,
+  .theme-maronish select,
+  .theme-maronish textarea {
+    border-color: hsl(var(--border)) !important;
+  }
+
+  .theme-maronish button {
+    border-color: hsl(var(--border)) !important;
+  }
+
+
+  .theme-new {
+    /* Name: custom color palette
+       Author: Ilias Ism
+       URL: https://gradient.page */
+
+    /* CSS: .bg-gradient { background: var(--gradient) } */
+    --gradient: linear-gradient(to top left,#A445B2,#D41872,#FF0066);
+
+    --background: 311 28.6% 3.84%;
+    --foreground: 311 4.4% 97.4%;
+
+    --muted: 311 22% 14.399999999999999%;
+    --muted-foreground: 311 4.4% 54.8%;
+
+    --popover: 311 56.2% 6.24%;
+    --popover-foreground: 311 4.4% 97.4%;
+
+    --card: 311 56.2% 6.24%;
+    --card-foreground: 311 4.4% 97.4%;
+
+    --border: 311 22% 14.399999999999999%;
+    --input: 311 22% 14.399999999999999%;
+
+    --primary: 311 44% 48%;
+    --primary-foreground: 311 4.4% 4.8%;
+
+    --secondary: 311 22% 14.399999999999999%;
+    --secondary-foreground: 311 4.4% 97.4%;
+
+    --accent: 311 22% 14.399999999999999%;
+    --accent-foreground: 311 4.4% 97.4%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 311 4.4% 97.4%;
+
+    --ring: 311 44% 48%;
+  }
+
+  .theme-new * {
+    border-color: hsl(var(--border)) !important;
+  }
+
+  .theme-new input,
+  .theme-new select,
+  .theme-new textarea {
+    border-color: hsl(var(--border)) !important;
+  }
+
+  .theme-new button {
+    border-color: hsl(var(--border)) !important;
+  }
+
 }
 
-@media (prefers-color-scheme: dark) {
+
+
+
+/* This layer is for charts components */
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --chart-1: 222.2 47.4% 11.2%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    --chart-1: 210 40% 98%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+
+  .theme-green {
+    --chart-1: 142.1 76.2% 36.3%;
+  }
+
+  .theme-orange {
+    --chart-1: 24.6 95% 53.1%;
+  }
+
+  .theme-purpleish {
+    --chart-1: -41 73% 46%
+  }
+
+  .theme-cyanish {
+    --chart-1: 198 51% 53%
+  }
+
+  .theme-yellowish {
+   --chart-1: 53 100% 67%;
+  }
+
+  .theme-maronish{
+    --chart-1 : 0 100% 27%
+  }
+
+  .theme-blue {
+    --chart-1: 221.2 83.2% 53.3%;
+  }
+
+  .theme-rose {
+    --chart-1: 346.8 77.2% 49.8%;
+  }
+
+  .theme-new {
+    --chart-1 : 311 44% 48%
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
